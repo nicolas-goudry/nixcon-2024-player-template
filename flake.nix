@@ -21,7 +21,7 @@
       in rec {
         packages = {
           webserver = pkgs.writeScriptBin "server" ''
-            ${pkgs.nodejs_22}/bin/node ${./src/index.js}
+            ${pkgs.nodejs_22}/bin/node ${./src/index.mjs}
           '';
           default = packages.webserver;
         };
