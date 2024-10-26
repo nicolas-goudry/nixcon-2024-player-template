@@ -12,6 +12,13 @@ const server = http.createServer((req, res) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
     res.end((parseInt(a) + parseInt(b)).toString());
+  } else if (req.url.startsWith('/mult')) {
+    const a = req.url.split('/')[2]
+    const b = req.url.split('/')[3]
+
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end((parseInt(a) * parseInt(b)).toString());
   } else {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
