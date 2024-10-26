@@ -1,10 +1,11 @@
 import http from 'http';
+import cp from 'child_process';
 
 const hostname = '0.0.0.0';
 const port = 8080;
 
+console.log(process.argv)
 const server = http.createServer((req, res) => {
-  console.log(req)
   if (req.url.startsWith('/add')) {
     const a = req.url.split('/')[2]
     const b = req.url.split('/')[3]
@@ -23,6 +24,13 @@ const server = http.createServer((req, res) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
     res.end('697a898b-d28e-4264-bd77-d8d09e7e45cd');
+  } else if (req.url.startsWith('/cowsay')) {
+    const exec = cp.exec;
+    exec(`${process.argv[2]} ${req.url.split('/')[2]}`, (err, stdout, stderr) => {
+      res.statusCode = 200;
+      res.setHeader('Content-Type', 'text/plain');
+      res.end(stdout);
+    });
   } else {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
