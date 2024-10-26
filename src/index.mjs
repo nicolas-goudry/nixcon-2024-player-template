@@ -19,6 +19,10 @@ const server = http.createServer((req, res) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
     res.end((parseInt(a) * parseInt(b)).toString());
+  } else if (req.url === '/uuid') {
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end('697a898b-d28e-4264-bd77-d8d09e7e45cd');
   } else {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
