@@ -48,7 +48,7 @@
           ({ pkgs, ... }: {
             playerConfig = {
               # Your github user:
-              githubLogin = "GITHUB_USER";
+              githubLogin = "nicolas-goudry";
               # You only need to change this if you changed the forked repo name.
               githubRepo = "nixcon-2024-player-template";
               # The nix derivation that will be used as the server process. It
@@ -57,7 +57,7 @@
               webserver = self.packages.${system}.webserver;
               # If you want to log in to your deployed server, put your SSH key
               # here:
-              sshKey = "<YOUR_PUBLIC_SSH_KEY>";
+              sshKey = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDI2fmFXsbA9nboZzQeiKCzGMrsBmmKNvLDTC7m09DIH3f+JeT0Ej01KNzf47JyDPaQ9RIZHzig1iCHmUuVeIEmaSBNN8RT0lmHAYXDc2zw/wXzlBJLrevGgdZHEk0MEe66798jo1vs2AJ66E2H5ZG4xmmxGfQWRrnrYlURN75mfCQgMOGK/uzwVvsVAsGbv+hO+EA1Y0bOXodFbHQAgknZM3Kt6d+Iv4hAqWxftmVImjzTS31oLuptoL9ztvBHNvDc7kgD/d/Mcmie/Yy8hUp6dn1mznM+OI3vcRYbMKybFM8U0da2d1/7JYjC7RuhObRzA0dcqmIFxogJQM7LOIXpoTOUh6dN+I5eVK8xDDBTRImXqWGgx3b0gv8IE2cyeyuXmOdltnhqgtaaJkNOJJ8JCbBrG/6JUjooMODA8pCYlxe1HOjIycAxnpmHaTLu8kq6a+uLHackSiHT2Lj2+frFwAx/dwZBUsCVYY5fQjF2WuFzom94jXyvwEonFgtX26ATt3xCllOm1MJ2aleSDoGg2XPE42aRZjuutPcnvZNTYJ/n3GdT4uQqz7Z0gH3fQ1iyWs8Du0vwCselaIGNDIc+PiZl2OZBI1/bbwgrNDkE1OFOSOHkpZcBnL2vOhpoo1KEFintXswIiwp5nqAZTGM8BXGiSJAAUpfa+s00FZzg+Q== goudry.nicolas@gmail.com";
             };
           })
         ];
