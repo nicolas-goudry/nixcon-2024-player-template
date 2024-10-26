@@ -5,13 +5,13 @@ const port = 8080;
 
 const server = http.createServer((req, res) => {
   console.log(req)
-  if (req.url.startsWith('add')) {
-    const a = req.url.split('/')[1]
-    const b = req.url.split('/')[2]
+  if (req.url.startsWith('/add')) {
+    const a = req.url.split('/')[2]
+    const b = req.url.split('/')[3]
 
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
-    res.end(a + b);
+    res.end((parseInt(a) + parseInt(b)).toString());
   } else {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
